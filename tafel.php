@@ -1,6 +1,6 @@
 <?php
 
-$tafel=readline("Welke tadel wil je zien? ");
+$tafel=readline("Welke tafel wil je zien? ");
 $begin=1;
 $eind=10;
 
