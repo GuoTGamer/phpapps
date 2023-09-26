@@ -1,11 +1,9 @@
 <?php
 
-$tekst="Hello World\n";
+$kop="Hee\n\n";
+$tekst="Dit is een bericht\n";
 
-echo $tekst;
-echo $tekst;
-echo $tekst;
-echo $tekst;
+echo $kop;
 echo $tekst;
 
 ?>
