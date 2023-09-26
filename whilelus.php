@@ -2,11 +2,13 @@
 
 $teller=1;
 $maximum=10;
+$tekst="Hello, World!\n";
 
 echo "Teller is voor de while lus ".$teller."\n";
 
 while ( $teller <= $maximum ) {
-echo "Teller is nu ".$teller."\n";
+echo $tekst;
+
 $teller++;
 }
 
