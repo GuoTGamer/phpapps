@@ -5,16 +5,19 @@ $jaar=25;
 $naam = readline("Geef jouw naam : ");
 $leeftijd = readline("Geef jouw leeftijd : ");
 
+$jonger=$jaar-$leeftijd;
+$ouder= $leeftijd-$jaar;
+
 echo "Hallo $naam \n";
 
 if ( $leeftijd < $jaar ) {
-        echo "Jij ben jonger dan $jaar jaar.\n";
+        echo "Jij bent ".$jonger." jaren jonger dan $jaar jaar.\n";
 }
 if ( $leeftijd > $jaar ) {
-        echo "Jij ben ouder dan $jaar jaar.\n";
+        echo "Jij bent ".$ouder." jaren ouder dan $jaar jaar.\n";
 }
 if ( $leeftijd == $jaar ) {
-        echo "Jij ben precies dan $jaar jaar.\n";
+        echo "Jij bent precies dan $jaar jaar.\n";
 }
 
 
