@@ -4,7 +4,7 @@
 $random = rand(1, 100);
 # Random getal benoemen voor developpen
 echo $random."\n\n";
-
+# guess zodat hij herkend word binnen de whilelus
 $guess = null;
 # Counter zodat je kan weten in hoeveel beurten je het hebt gedaan
 $counter = 0;
@@ -15,7 +15,7 @@ while($random != $guess) {
     $counter ++;
     $guess = readline("Kies een cijfer: ");
     if ($guess < 1 || $guess > 100 || $guess == "stop") {
-        break; // Stopt als je een getal lager dan 1 of hoger dan 100 invoert en als je stop invoert
+        break; # Zodat het spel stopt als je < 0, > 100 of stop typt
     }
     if ($random > $guess) {
         echo "\n\nHet getal is hoger!\n\n";
