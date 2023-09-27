@@ -3,7 +3,7 @@
 # Random getal tussen de 1 en 100
 $random = rand(1, 100);
 # Random getal benoemen voor developpen
-echo $random."\n\n";
+#echo $random."\n\n";
 # guess zodat hij herkend word binnen de whilelus
 $guess = null;
 # Counter zodat je kan weten in hoeveel beurten je het hebt gedaan
