@@ -1,42 +1,58 @@
 <?php
-$naam = readline("Hoe heet je: ");
-$geboortedatum = readline("Wanneer ben je geboren: ");
+$personen = [];
 
+while (true) {
+    $naam = readline("Hoe heet je (of typ 'klaar' om de lijst te tonen): ");
+    if ($naam === 'klaar') {
+        break; // Stop de invoer als 'stop' wordt ingevoerd
+    }
+    
+    $geboortedatum = readline("Wanneer ben je geboren: ");
 
-$leeftijd = (new DateTime($geboortedatum))->diff(new DateTime())->y;
-$maanden = (new DateTime($geboortedatum))->diff(new DateTime())->m;
+    $leeftijd = (new DateTime($geboortedatum))->diff(new DateTime())->y;
+    $maanden = (new DateTime($geboortedatum))->diff(new DateTime())->m;
 
-echo "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
-echo "Hallo " . $naam . ", u bent " . $leeftijd . " jaar en " . $maanden . " maanden oud \n";
+    $persoon = [
+        'naam' => $naam,
+        'leeftijd' => $leeftijd,
+        'maanden' => $maanden
+    ];
 
-$jonger= 16-$leeftijd;
-$ouder= $leeftijd-16;
-
-if ( $leeftijd < 16 ) {
-    echo "Jij bent ".$jonger." jaren jonger dan 16 jaar.\n";
-} elseif ( $leeftijd > 16 ) {
-    echo "Jij bent ".$ouder." jaren ouder dan 16 jaar.\n";
-} else {
-    echo "Jij bent precies dan 16 jaar.\n";
+    $personen[] = $persoon;
 }
 
-$jonger= 50-$leeftijd;
-$ouder= $leeftijd-50;
+foreach ($personen as $persoon) {
+    echo "\n\nHallo " . $persoon['naam'] . ", u bent " . $persoon['leeftijd'] . " jaar en " . $persoon['maanden'] . " maanden oud \n";
 
-if ( $leeftijd < 50 ) {
-    echo "Jij bent ".$jonger." jaren jonger dan 50 jaar.\n";
-} elseif ( $leeftijd > 50 ) {
-    echo "Jij bent ".$ouder." jaren ouder dan 50 jaar.\n";
-} else {
-    echo "Jij bent precies dan 50 jaar.\n";
-} 
+    $jonger = 16 - $persoon['leeftijd'];
+    $ouder = $persoon['leeftijd'] - 16;
 
-$jonger= 67-$leeftijd;
+    if ($persoon['leeftijd'] < 16) {
+        echo "Jij bent " . $jonger . " jaren jonger dan 16 jaar.\n";
+    } elseif ($persoon['leeftijd'] > 16) {
+        echo "Jij bent " . $ouder . " jaren ouder dan 16 jaar.\n";
+    } else {
+        echo "Jij bent precies 16 jaar.\n";
+    }
 
-echo "Nog ". $jonger ." jaar tot je klaar bent met werken\n";
+    $jonger = 50 - $persoon['leeftijd'];
+    $ouder = $persoon['leeftijd'] - 50;
 
-$jonger= 100-$leeftijd;
+    if ($persoon['leeftijd'] < 50) {
+        echo "Jij bent " . $jonger . " jaren jonger dan 50 jaar.\n";
+    } elseif ($persoon['leeftijd'] > 50) {
+        echo "Jij bent " . $ouder . " jaren ouder dan 50 jaar.\n";
+    } else {
+        echo "Jij bent precies 50 jaar.\n";
+    }
 
-echo "Nog ". $jonger ." jaar tot je dood moet zijn";
+    $jonger = 67 - $persoon['leeftijd'];
+    echo "Nog " . $jonger . " jaar tot je klaar bent met werken\n";
+
+    $jonger = 100 - $persoon['leeftijd'];
+    echo "Nog " . $jonger . " jaar tot je dood moet zijn\n\n";
+}
+
+echo "Dit was alle informatie van de lijst namen die u ingestuurd heeft.";
 
 ?>
