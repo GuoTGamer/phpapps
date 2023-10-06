@@ -15,6 +15,7 @@ while($random != $guess) {
     $counter ++;
     $guess = readline("Kies een cijfer: ");
     if ($guess < 1 || $guess > 100 || $guess == "stop") {
+        echo "Het spel is gestopt omdat je een getal onder de 1 boven if de 100 hebt getypt of het woord Stop.";
         break; # Zodat het spel stopt als je < 0, > 100 of stop typt
     }
     if ($random > $guess) {
